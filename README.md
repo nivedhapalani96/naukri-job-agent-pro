@@ -2,6 +2,8 @@
 
 A production-ready, stability-first job discovery agent for Naukri.com that automatically monitors job listings, scores them against your profile, and sends intelligent email notifications. Built with a clean architecture emphasizing maintainability, testability, and operational reliability.
 
+📖 **Read the detailed architecture blog post**: [Designing a Time-Critical Job Discovery System: A Stability-First Agent-Assisted Architecture](https://medium.com/@nivedhapalani08/designing-a-time-critical-job-discovery-system-a-stability-first-agent-assisted-architecture-90703d07ab72)
+
 ## Table of Contents
 
 - [Overview](#overview)
