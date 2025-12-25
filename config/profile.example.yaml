@@ -1,0 +1,32 @@
+profile:
+  name: "Your Name"
+  target_titles:
+    - "Senior Backend Engineer"
+    - "Senior Full Stack Engineer"
+    - "Platform Engineer"
+  preferred_locations:
+    - "Remote"
+    - "Bangalore"
+    - "Chennai"
+  must_have_skills:
+    - "Node.js"
+    - "AWS"
+    - "PostgreSQL"
+  nice_to_have_skills:
+    - "Elasticsearch"
+    - "Redis"
+    - "Docker"
+    - "Kubernetes"
+  domain_keywords:
+    - "marketplace"
+    - "e-commerce"
+    - "platform"
+    - "search"
+  company_preferences:
+    preferred: ["Stripe", "Deliveroo"]
+    avoided: ["Confidential"]
+  resume_summary: |
+    Senior engineer focused on backend/platform systems and scalable marketplaces.
+  achievements:
+    - "Designed scalable search architecture using PostgreSQL + MeiliSearch."
+    - "Built extensible plugin architectures for internal platforms."

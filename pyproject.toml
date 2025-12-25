@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "naukri-job-agent"
+version = "0.2.0"
+description = "Stability-first Naukri job discovery agent: configurable profile scoring + Gmail notifications + state tracking."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "YOUR_NAME"}]
+dependencies = [
+  "requests>=2.32.0",
+  "beautifulsoup4>=4.12.3",
+  "lxml>=5.3.0",
+  "pydantic>=2.8.2",
+  "PyYAML>=6.0.2",
+  "SQLAlchemy>=2.0.32",
+  "tenacity>=9.0.0",
+  "APScheduler>=3.10.4",
+  "Jinja2>=3.1.4",
+]
+
+[project.scripts]
+naukri-agent = "job_agent.cli:main"

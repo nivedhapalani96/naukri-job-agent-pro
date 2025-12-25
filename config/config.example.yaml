@@ -1,0 +1,60 @@
+app:
+  db_url: "sqlite:///data/agent.db"
+  user_timezone: "Asia/Kolkata"
+  log_level: "INFO"
+
+polling:
+  interval_seconds: 420
+  jitter_seconds: 30
+  max_jobs_per_run: 60
+
+sources:
+  naukri:
+    enabled: true
+    search_urls:
+      - "https://www.naukri.com/<PASTE-YOUR-SEARCH-URL>"
+    request:
+      timeout_seconds: 20
+      user_agent: "Mozilla/5.0 (compatible; NaukriJobAgent/0.2; +https://example.invalid)"
+    parsing:
+      card_selectors: ["div.cust-job-tuple", "div.jobTuple", "article"]
+      title_selectors: ["a.title", "a[title]", ".title"]
+      company_selectors: [".comp-name", ".companyName"]
+      location_selectors: [".locWdth", ".location"]
+      posted_selectors: [".job-post-day", ".postedDate", "span.fleft.postedDate"]
+      url_selectors: ["a.title", "a[title]"]
+
+scoring:
+  min_score_to_email: 78
+  freshness_boost:
+    just_now: 15
+    today: 10
+    last_3_days: 6
+  weights:
+    title_match: 25
+    skill_match: 45
+    seniority_match: 12
+    location_match: 8
+    company_pref: 10
+  hard_filters:
+    reject_title_keywords: ["intern", "trainee", "junior", "support", "sales"]
+    reject_desc_keywords: ["telecalling", "bpo", "customer support"]
+  options:
+    use_description_fetch: false
+    description_cache_ttl_minutes: 720
+
+email:
+  enabled: true
+  from_email: "YOUR_GMAIL@gmail.com"
+  to_emails: ["YOUR_GMAIL@gmail.com"]
+  subject_prefix: "[Naukri Agent]"
+  gmail_smtp:
+    enabled: true
+    username: "YOUR_GMAIL@gmail.com"
+    gmail_app_password: "PASTE_GMAIL_APP_PASSWORD"
+  digest:
+    enabled: true
+    hour: 19
+    minute: 0
+
+profile_path: "config/profile.yaml"
